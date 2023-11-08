@@ -11,7 +11,7 @@ else
             echo "Already added"
             else
             # code if not found
-            sed -i '2idefine( 'WP_AUTO_UPDATE_CORE', false );' wp-config.php
+            sed -i "2i define( 'WP_AUTO_UPDATE_CORE', false );" wp-config.php
         fi
 fi
 done

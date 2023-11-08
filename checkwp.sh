@@ -15,12 +15,3 @@ else
         fi
 fi
 done
-
-
-if [[ $(cd $d && wp plugin list --quiet=true --allow-root | grep -iE "wp-rocket|breeze" | wc -l) -ne 0 ]]; then
-echo "$i has no  cache plugin"
-else
-    echo "$i has a cache plugin"
-fi
-echo "---------------------------------------------------------------------------------------------------------------"
-done

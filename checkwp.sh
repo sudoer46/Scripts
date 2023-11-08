@@ -5,12 +5,14 @@ cd $d
 if ! [ -f $d/wp-config.php ]; then
   echo "This is not a WP"
 else
-        isInFile=$(cat wp-config.php | grep -c "WP_AUTO_UPDATE_CORE")
+        isInFile1=$(cat wp-config.php | grep -i "WP_AUTO_UPDATE_CORE")
+        isInFile=$(cat wp-config.php | grep -i "WP_AUTO_UPDATE_CORE"| grep -c false)
         if [ $isInFile -eq 0 ]; then
             # code if found
             sed -i "2i define( 'WP_AUTO_UPDATE_CORE', false );" wp-config.php
             else
-            echo "Already added"
+            echo "Core update already Disabled in $i"
+            echo "$i = $isInFile1"
         fi
 fi
 done
